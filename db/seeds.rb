@@ -13,7 +13,7 @@ price = (0..100)
 15.times do
   Car.create(
     capacity: people.sample,
-    type: Faker::Vehicle.car_type,
+    kind: Faker::Vehicle.car_type,
     brand: Faker::Vehicle.make_and_model,
     online: true,
     drive_train: Faker::Vehicle.transmission,
