@@ -1,2 +1,10 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
+<h1><%= @car.brand %></h1>
+
+<div class="car_info">
+  <img src="https://image.flaticon.com/icons/svg/66/66906.svg">
+  <p><%= @car.type %></p>
+  <p><%= @car.capacity %></p>
+  <p><%= @car.drive_train %></p>
+  <p>€<%= @car.price %> per day</p>
+
+</div>
