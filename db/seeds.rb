@@ -21,3 +21,4 @@ price = (0..100)
     )
 end
 
+puts "Done!"
