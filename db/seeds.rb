@@ -9,7 +9,7 @@
 puts "creating cars"
 
 people = [2, 3, 4, 5]
-price = (0..100)
+price = (30..100)
 15.times do
   Car.create(
     capacity: people.sample,
@@ -18,6 +18,7 @@ price = (0..100)
     drive_train: Faker::Vehicle.transmission,
     price: price.sample # or price: rand(1..100)
     )
+  car.save!
 end
 
 puts "Done!"
