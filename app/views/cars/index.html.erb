@@ -10,14 +10,16 @@
   <% @cars.each do |car| %>
     <div class="car-card">
       <img src="https://source.unsplash.com/GDOGHRVhcME" />
-      <div class="car-card-info">
+      <div class="car-card-info-left">
         <div>
           <h2><%= car.brand %></h2>
           <p>👤 <%= car.capacity %></p>
           <p>🕹 <%= car.drive_train %></p>
         </div>
-        <h2 class="car-card-pricing">Price: <%= car.price %>€</h2>
-        <%= link_to "Book now", car_path(car), id: "submit-search-button" %>
+        <div class="car-card-info-right">
+          <h2 class="car-card-pricing">Price: <%= car.price %>€</h2>
+          <%= link_to "Book now", car_path(car), class: "submit-search-button" %>
+        </div>
       </div>
     </div>
   <% end %>

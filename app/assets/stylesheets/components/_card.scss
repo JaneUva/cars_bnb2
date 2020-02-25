@@ -20,6 +20,11 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin-bottom: 20px;
+}
+
+.car-card-pricing {
+  opacity: .8;
 }
 
 .car-card p {
@@ -28,25 +33,52 @@
   margin: 0;
 }
 
-
-.car-card .car-card-info {
+.car-card .car-card-info-left {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   position: relative;
 }
 
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
+.car-card .car-card-info-right {
+  text-align: end;
 }
-.card-link:hover {
-  opacity: 0.1;
+
+
+
+
+ // Media queries
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
