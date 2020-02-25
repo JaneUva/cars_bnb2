@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "creating cars"
+
+people = [2, 3, 4, 5]
+price = (30..100)
+15.times do
+  Car.create(
+    capacity: people.sample,
+    kind: Faker::Vehicle.car_type,
+    brand: Faker::Vehicle.make_and_model,
+    drive_train: Faker::Vehicle.transmission,
+    price: price.sample # or price: rand(1..100)
+    )
+end
+
+puts "Done!"
