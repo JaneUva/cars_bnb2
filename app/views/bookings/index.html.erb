@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>My Bookings</h1>
+
+  <% @bookings.each do |booking| %>
+  <%= link_to booking.car.brand, booking_path(booking) %>
+    <%= booking.car.brand %>
+    <%= booking.start_date %>
+
+  <% end %>
+</div>
