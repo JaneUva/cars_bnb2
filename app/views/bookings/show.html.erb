@@ -1,8 +1,24 @@
 <div class="container">
 
-  <h1>Bookings#show</h1>
-  <p>Start Date: <%= @booking.start_date %></p>
-  <p>End Date: <%= @booking.end_date %></p>
-  <%= link_to "Cancel this booking", booking_path, method: :delete  %>
+  <h1 id="booking-title">Booking for <%= @booking.car.brand %> </h1>
+
+  <div class="booking-info row">
+
+    <div class="booking-details col">
+      <img class="car-pic" src="https://image.flaticon.com/icons/svg/66/66906.svg">
+      <p>Start Date: <%= @booking.start_date %></p>
+      <p>End Date: <%= @booking.end_date %></p>
+    </div>
+
+    <div class="booking-status border border-dark rounded p-3 col-md-3">
+      <p>Rental Period: <%= @number_of_days %> days</p>
+      <p>Total Cost: <%= (@booking.car.price * @number_of_days) %></p>
+      <%= link_to "Cancel this booking", booking_path, method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
+    </div>
+
+  </div>
+
+<hr>
+<%= link_to "Back to vehicle", car_path(@booking.car_id) %>
 
 </div>
