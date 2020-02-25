@@ -10,7 +10,7 @@ class Booking < ApplicationRecord
       self.start_date < Date.today
   end
 
-  def end_date_is_after_start_date
+  def end_date_must_be_after_start_date
     errors.add(:end_date, "must be after start date") if
     self.end_date < self.start_date
   end
