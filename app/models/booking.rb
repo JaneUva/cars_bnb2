@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  before_save :check_date_availability
   belongs_to :user
   belongs_to :car
   validates :start_date, :end_date, presence: true
@@ -7,5 +8,11 @@ class Booking < ApplicationRecord
   def start_date_cannot_be_in_the_past
     errors.add(:start_date, "can't be in the past") if
       self.start_date < Date.today
+  end
+
+  def check_date_availability
+    errors.add(:start_date, "date already booked")
+    bookings = Booking.where('start_date <= ? AND end_date >= ?', self.start_date, self.end_date)
+    return bookings.empty?
   end
 end
