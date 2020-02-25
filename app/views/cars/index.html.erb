@@ -2,10 +2,24 @@
   <div class="container">
     <h1>Book a car of <strong>your dream</strong>!</h1>
     <p>Select from awesome collection of unique cars</p>
-    <!-- <a class="btn btn-flat" href="#">book now</a> -->
   </div>
 </div>
 
+
+<div class="cards">
   <% @cars.each do |car| %>
-    <h2><%= car.brand %></h2>
+    <div class="car-card">
+      <img src="https://source.unsplash.com/GDOGHRVhcME" />
+      <div class="car-card-info">
+        <div>
+          <h2><%= car.brand %></h2>
+          <p>👤 <%= car.capacity %></p>
+          <p>🕹 <%= car.drive_train %></p>
+        </div>
+        <h2 class="car-card-pricing">Price: <%= car.price %>€</h2>
+        <%= link_to "Book now", car_path(car), id: "submit-search-button" %>
+      </div>
+    </div>
   <% end %>
+</div>
+
