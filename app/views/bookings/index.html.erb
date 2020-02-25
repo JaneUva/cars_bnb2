@@ -2,9 +2,14 @@
   <h1>My Bookings</h1>
 
   <% @bookings.each do |booking| %>
+
   <%= link_to booking.car.brand, booking_path(booking) %>
     <%= booking.car.brand %>
-    <%= booking.start_date %>
+    <% days = (booking.end_date-booking.start_date).to_i %>
+    <p>Rental Period: <%= "#{days}" %> days</p>
+    <p>Start date: <%=  booking.start_date%></p>
+    <p>End date: <%=  booking.end_date%></p>
+    <%= link_to "Cancel my booking", booking_path(booking) %>
 
   <% end %>
 </div>
