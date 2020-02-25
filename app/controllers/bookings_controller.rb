@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :set_car, except: [:destroy, :show]
+  before_action :set_car, except: [:destroy, :show, :index]
+
+  def index
+    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
+  end
+
   def create
     @booking = Booking.new(set_params)
     @booking.car = @car
@@ -15,6 +21,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    @number_of_days = (@booking.end_date - @booking.start_date).to_i
   end
 
   def destroy

@@ -15,7 +15,6 @@
   filter: invert(27%) sepia(84%) saturate(1478%) hue-rotate(355deg) brightness(95%) contrast(100%);
 }
 
-
 .navbar-search {
   display: flex;
   align-items: center;
@@ -28,5 +27,5 @@
 .navbar-search-field input[type="text"] {
   padding-left: 15vw;
   padding-right: 15vw;
-  text-align: center;
+  text-align: left;
 }
