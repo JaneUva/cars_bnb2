@@ -5,8 +5,12 @@ class CarPolicy < ApplicationPolicy
     end
   end
 
-    def show?
-    # who can see the restaurant? every user
-      return true
-    end
+  def index?
+    true
+  end
+
+  def show?
+  # who can see the restaurant? every user
+    return true
+  end
 end
