@@ -6,10 +6,15 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class ="navbar-search"> <%= form_tag cars_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "type in brand of a car"%>
-    <%= submit_tag "Search", id: "submit-search-button"%>
-  <% end %>
+  <div class ="navbar-search">
+    <div class="navbar-search-field">
+      <%= form_tag cars_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find your car"%>
+    </div>
+    <div class="navbar-submit-field">
+      <%= submit_tag "Search", id: "submit-search-button"%>
+      <% end %>
+    </div>
   </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
