@@ -3,11 +3,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(set_params)
     @booking.car = @car
-    if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      render :show
-    end
+    @booking.save
+    redirect_to booking_path(@booking)
+    # else
+    #   render :show
+    # end
   end
 
   def show
