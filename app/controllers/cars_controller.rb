@@ -3,8 +3,7 @@ class CarsController < ApplicationController
   def index
    if params[:query].present?
       @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
-      raise
-    else
+   else
       @cars = Car.all
     end
   end

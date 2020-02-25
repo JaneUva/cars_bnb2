@@ -7,7 +7,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class ="navbar-search"> <%= form_tag cars_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a car"%>
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "type in brand of a car"%>
     <%= submit_tag "Search", id: "submit-search-button"%>
   <% end %>
   </div>
