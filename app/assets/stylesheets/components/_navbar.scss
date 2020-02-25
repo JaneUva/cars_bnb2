@@ -16,3 +16,17 @@
 }
 
 
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search-field {
+  padding: 0 10px;
+}
+
+.navbar-search-field input[type="text"] {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  text-align: center;
+}
