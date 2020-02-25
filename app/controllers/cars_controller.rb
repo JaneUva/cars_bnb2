@@ -1,10 +1,13 @@
 class CarsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @cars = policy_scope(Car)
-  end
+     if params[:query].present?
+       @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
+     else
+       @cars = policy_scope(Car)
+     end
 
-  def show
+    def show
     @car = Car.find(params[:id])
     authorize @car
   end
