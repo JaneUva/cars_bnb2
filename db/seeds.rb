@@ -18,7 +18,6 @@ price = (30..100)
     drive_train: Faker::Vehicle.transmission,
     price: price.sample # or price: rand(1..100)
     )
-  car.save!
 end
 
 puts "Done!"
