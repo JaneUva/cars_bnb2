@@ -16,7 +16,7 @@ price = (30..100)
     kind: Faker::Vehicle.car_type,
     brand: Faker::Vehicle.make_and_model,
     drive_train: Faker::Vehicle.transmission,
-    price: price.sample # or price: rand(1..100)
+    price: rand(price) # or price: rand(1..100)
     )
 end
 
