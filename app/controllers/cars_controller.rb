@@ -1,10 +1,11 @@
 class CarsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @cars = Car.all
+    @cars = policy_scope(Car)
   end
 
   def show
     @car = Car.find(params[:id])
+    authorize @car
   end
 end
