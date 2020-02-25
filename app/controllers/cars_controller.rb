@@ -3,6 +3,7 @@ class CarsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @car = Car.find(params[:id])
   end
 end
