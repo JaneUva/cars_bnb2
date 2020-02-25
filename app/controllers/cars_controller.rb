@@ -11,6 +11,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def show
+    @booking = Booking.new
     @car = Car.find(params[:id])
     authorize @car
   end
