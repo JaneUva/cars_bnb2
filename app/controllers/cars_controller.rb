@@ -1,21 +1,17 @@
 class CarsController < ApplicationController
 
+  def index
+   if params[:query].present?
+      @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
+      raise
+    else
+      @cars = Car.all
+    end
+  end
 
   def show
     @car = Car.find(params[:id])
   end
 
-  def self.search(search)
-    if search
-      car_kind = Car.find_by(kind: search)
-        if car_kind
-          self.where(car_id: car_kind)
-        else
-          @cars=Car.all
-        end
-    else
-      @cars = Car.all
-    end
-  end
 
 end
