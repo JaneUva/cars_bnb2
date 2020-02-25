@@ -24,6 +24,17 @@
       <a class="btn btn-primary book-btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         Book this car
       </a>
+      <% if @car.bookings.empty? %>
+        <p>this is bookable</p>
+      <% else %>
+        <% @car.bookings.each do |booking|%>
+          <% if booking.start_date == Date.new(2020, 2, 25) %>
+            <p>feb 25 is booked</p>
+          <% else %>
+            <p>booked on another day</p>
+          <% end %>
+        <% end %>
+      <% end %>
       <div class="collapse" id="collapseExample">
         <div class="card card-body">
           <%= render "bookings/form" %>
