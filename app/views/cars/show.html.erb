@@ -1,2 +1,23 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
+<h1 id="car-show-title"><%= @car.brand %></h1>
+
+<div class="car-info row">
+
+  <div class="car-details col-md-9">
+    <img class="car-pic" src="https://image.flaticon.com/icons/svg/66/66906.svg">
+    <ul id="car-specs">
+      <li><%= @car.kind.capitalize %></li>
+      <li><%= @car.capacity %> passengers</li>
+      <li><%= @car.drive_train.capitalize %></li>
+    </ul>
+  </div>
+  <div class="car-status col-md-3">
+    <p>€<%= @car.price %> per day</p>
+    <% if @car.online %>
+      <i class="fas fa-car green"> - available</i>
+    <% else %>
+      <i class="fas fa-car red"> - unavailable</i>
+    <% end %>
+  </div>
+
+</div>
+<hr>
