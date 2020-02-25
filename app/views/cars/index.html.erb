@@ -1,2 +1,6 @@
 <h1>Our cars to book</h1>
     <p>Book cars from us</p>
+
+  <% @cars.each do |car| %>
+    <h2><%= car.brand %></h2>
+  <% end %>
