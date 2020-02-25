@@ -15,7 +15,6 @@ price = (0..100)
     capacity: people.sample,
     kind: Faker::Vehicle.car_type,
     brand: Faker::Vehicle.make_and_model,
-    online: true,
     drive_train: Faker::Vehicle.transmission,
     price: price.sample # or price: rand(1..100)
     )
