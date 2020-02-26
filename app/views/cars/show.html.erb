@@ -1,9 +1,6 @@
 <div class="container">
-
   <h1 id="car-show-title"><%= @car.brand %></h1>
-
   <div class="car-info row">
-
     <div class="car-details col-md-8">
       <img class="car-pic" src="https://image.flaticon.com/icons/svg/66/66906.svg">
       <ul id="car-specs">
@@ -12,9 +9,7 @@
         <li><%= @car.drive_train.capitalize %></li>
       </ul>
     </div>
-
     <div class="car-status col-md-4">
-
       <p>€<%= @car.price %> per day</p>
       <% if @car.online %>
         <i class="fas fa-car green"> - available</i>
@@ -29,17 +24,11 @@
           <%= render "bookings/form" %>
         </div>
       </div>
-
     </div>
-
-
   </div>
-
   <hr>
-
   <div class="car-description row">
     <p class="description-text col-md-7">Why do we use it?
   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
   </div>
-
 </div>
