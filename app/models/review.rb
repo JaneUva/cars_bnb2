@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :car
-  validates :content, length: { minimum: 15 }
+  belongs_to :user
+  validates :content, length: { minimum: 5 }
 end

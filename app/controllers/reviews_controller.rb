@@ -3,10 +3,12 @@ class ReviewsController < ApplicationController
     @car = Car.find(params[:car_id])
     @review = Review.new(review_params)
     @review.car = @car
+    @review.user_id = current_user.id
+    authorize @review
     if @review.save
       redirect_to car_path(@car)
     else
-      render 'car/show'
+      render 'cars/show'
     end
   end
 
