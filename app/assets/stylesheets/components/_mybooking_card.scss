@@ -1,0 +1,58 @@
+.container h1 {
+margin-top: 20px;
+}
+
+.container-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card-product {
+  overflow: hidden;
+  width: 50vw;
+  height: 180px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 250px;
+  object-fit: cover;
+  padding-right: 10px;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product-button {
+  margin-top: 20px;
+}
+
+.booking-book-button {
+  margin-top: 50px;
+  margin-left: 200px;
+
+}
+
+.container-book-other-car {
+  margin-top: 100px;
+}
