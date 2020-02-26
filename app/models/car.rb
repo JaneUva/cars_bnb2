@@ -4,4 +4,10 @@ class Car < ApplicationRecord
   validates :capacity, :brand, :kind, :price, :drive_train, presence: true
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  def self.brands
+    @cars = Car.all
+    brands = @cars.map { |car| car.brand }
+    return brands
+  end
 end

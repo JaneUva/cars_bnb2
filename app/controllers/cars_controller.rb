@@ -3,6 +3,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
   @cars = policy_scope(Car).geocoded
+   if params[:query].present?
+    @cars = Car.near(params[:query])
+   else
+     @cars
+   end
   @markers = @cars.map do |car|
     {
       lat: car.latitude,
@@ -11,11 +16,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     }
   end
 
-   if params[:query].present?
-     @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
-   else
-     @cars
-   end
   end
 
   def show
@@ -23,4 +23,14 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @car = Car.find(params[:id])
     authorize @car
   end
+
+  private
+
+  # def analyze_query
+  #   if Car.brands.include? "#{params[:query]}"
+  #     @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
+  #   else
+  #     @cars = Car.near(params[:query], 10)
+  #   end
+  # end
 end

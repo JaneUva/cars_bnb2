@@ -10,7 +10,7 @@
   <div class ="navbar-search">
     <div class="navbar-search-field">
       <%= form_tag cars_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Search cars or locations"%>
+        <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Search locations"%>
     </div>
     <div class="navbar-submit-field">
       <%= submit_tag "Search", class: "submit-search-button"%>
