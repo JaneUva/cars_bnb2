@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(version: 2020_02_26_122017) do
     t.string "drive_train"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
+    t.string "description"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "reviews", force: :cascade do |t|
