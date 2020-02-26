@@ -2,6 +2,10 @@
 margin-top: 20px;
 }
 
+.container-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .card-product {
   overflow: hidden;
   width: 50vw;
@@ -16,8 +20,9 @@ margin-top: 20px;
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 250px;
   object-fit: cover;
+  padding-right: 10px;
 }
 
 .card-product h2 {
@@ -40,4 +45,7 @@ margin-top: 20px;
 
 .card-product-button {
   margin-top: 20px;
+}
+
+.container-book-other-car {
 }

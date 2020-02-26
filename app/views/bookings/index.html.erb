@@ -1,6 +1,9 @@
 <div class="container">
   <h1>My Bookings</h1>
 
+<div class="container-two-columns">
+
+<div class="container-booked-cars">
 <% @bookings.each do |booking| %>
   <div class="card-product">
     <% if booking.car.id == 15 %>
@@ -41,11 +44,16 @@
       <div class="card-product-button">
       <%= link_to "Go to my booking", booking_path(booking), class: "submit-search-button"  %>
       <%= link_to "Cancel", booking_path(booking), class: "submit-search-button"  %>
-
       </div>
     </div>
   </div>
   <% end %>
+  </div>
+  <div class="container-book-other-car">
+    <%= link_to "Book other car", bookings_path, class: "booking-book-button"%>
+  </div>
+  </div>
 </div>
+
 
 
