@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.check_date_availability && @booking.save
       redirect_to booking_path(@booking)
+      raise
     else
       render :template => 'cars/show'
     end
