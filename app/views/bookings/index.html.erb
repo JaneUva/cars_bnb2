@@ -6,7 +6,8 @@
 <div class="container-booked-cars">
 <% @bookings.each do |booking| %>
   <div class="card-product">
-    <% if booking.car.id == 15 %>
+    <% if booking.car.brand.include?("Honda") %>
+    <% raise %>
       <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/2018_Nissan_Juke_Bose_Personal_Edition_1.6_Front.jpg" alt="">
     <% elsif booking.car.id == 1%>
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/2009_Ford_F-150_XLT_SuperCrew.jpg" alt="">
@@ -48,9 +49,6 @@
     </div>
   </div>
   <% end %>
-  </div>
-  <div class="container-book-other-car">
-    <%= link_to "Book other car", bookings_path, class: "booking-book-button"%>
   </div>
   </div>
 </div>
