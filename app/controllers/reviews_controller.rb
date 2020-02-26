@@ -6,12 +6,17 @@ class ReviewsController < ApplicationController
     @review.car = @car
     @review.user_id = current_user.id
     authorize @review
-    if @review.save
-      # Happy path
-      redirect_to car_path(@car)
+   if @review.save
+    # The code below alows to append messages to review with or without JS enabled
+      respond_to do |format|
+        format.html { redirect_to car_path(@car) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      # Sad path
-      render 'cars/show'
+      respond_to do |format|
+        format.html { render 'cars/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
