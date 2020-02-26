@@ -1,21 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <img src="http://cdn.onlinewebfonts.com/svg/img_23163.svg" class="filter-red">
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class ="navbar-search">
     <div class="navbar-search-field">
       <%= form_tag cars_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find your car"%>
+        <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Search cars or locations"%>
     </div>
     <div class="navbar-submit-field">
       <%= submit_tag "Search", class: "submit-search-button"%>
       <% end %>
     </div>
   </div>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
