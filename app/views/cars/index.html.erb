@@ -5,7 +5,10 @@
   </div>
 </div>
 
+<div class="container">
 
+
+<% if @cars.present? %>
 <div class="cards">
   <% @cars.each do |car| %>
     <div class="car-card">
@@ -49,5 +52,15 @@
       </div>
     </div>
   <% end %>
+</div>
+<% else %>
+  <h1 id="no-results">Sorry, we didn't find any cars matching your search</h1>
+<% end %>
+
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
 
