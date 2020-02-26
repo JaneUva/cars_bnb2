@@ -6,7 +6,8 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   @markers = @cars.map do |car|
     {
       lat: car.latitude,
-      lng: car.longitude
+      lng: car.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { car: car })
     }
   end
 
