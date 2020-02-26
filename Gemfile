@@ -11,6 +11,8 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '5.2.4.1'
 gem 'redis'
+#Adding geocoder for map generation
+gem 'geocoder'
 
 
 gem 'autoprefixer-rails'
