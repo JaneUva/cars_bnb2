@@ -1,6 +1,6 @@
 <%= simple_form_for [@car, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, as: :string, input_html: { id: "start_date"} %>
+  <%= f.input :end_date, as: :string, input_html: { id: "end_date"} %>
   <%= f.submit "Confirm", class: "btn btn-primary" %>
   <%= f.error_notification %>
 <% end %>
