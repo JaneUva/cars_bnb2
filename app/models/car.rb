@@ -22,7 +22,7 @@ class Car < ApplicationRecord
   end
 
   def photo_validate
-    if self.photo.attached? == false
+    if photo.attached? == false
       errors.add(:photo, 'is required')
     end
   end
