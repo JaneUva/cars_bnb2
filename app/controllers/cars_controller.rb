@@ -18,7 +18,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def new
-    @car = Car.new(user_id: current_user.id)
+    @car = Car.new
     authorize @car
   end
 

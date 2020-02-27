@@ -6,11 +6,14 @@ class CarPolicy < ApplicationPolicy
   end
 
   def show?
-  # who can see the restaurant? every user
     return true
   end
 
   def create?
     record.user == user
+  end
+
+  def new?
+    user.present?
   end
 end
