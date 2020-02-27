@@ -27,11 +27,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   private
 
-  # def analyze_query
-  #   if Car.brands.include? "#{params[:query]}"
-  #     @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
-  #   else
-  #     @cars = Car.near(params[:query], 10)
-  #   end
-  # end
+  def set_car_params
+    params[:car].permit(:kind, :brand, :capacity, :price, :drive_train, :location, :description, :photo)
+  end
 end
