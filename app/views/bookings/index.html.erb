@@ -1,52 +1,26 @@
 <div class="container">
   <h1>My Bookings</h1>
 
-<% @bookings.each do |booking| %>
-  <div class="card-product">
-    <% if booking.car.brand.include?("Honda") %>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/2018_Nissan_Juke_Bose_Personal_Edition_1.6_Front.jpg" alt="">
-    <% elsif booking.car.id == 1%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/2009_Ford_F-150_XLT_SuperCrew.jpg" alt="">
-    <% elsif booking.car.id == 3%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/BMW_X1_%28E84%2C_Facelift%29_%E2%80%93_Frontansicht%2C_2._September_2012%2C_D%C3%BCsseldorf.jpg" alt="">
-    <% elsif booking.car.id == 4 %>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/2017_Honda_CR-V_front_4.11.18.jpg" alt="">
-    <% elsif booking.car.id == 5 %>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/2014_Honda_Accord_2.4_i-VTEC_sedan_%282016-01-07%29_01.jpg" alt="">
-    <% elsif booking.car.id == 6 %>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Lincoln_MKS_--_01-13-2010.jpg" alt="">
-    <% elsif booking.car.id == 7%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Dodge_Durango_5.7_V8_Hemi_RT_%28III%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg" alt="">
-    <% elsif booking.car.id == 8%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Honda_Civic_Type_R_Customer_Racing_Study_IMG_0298.jpg" alt="">
-    <% elsif booking.car.id == 10%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Toyota_Camry_SE_P4110367.jpg" alt="">
-    <% elsif booking.car.id == 12%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/2003_Ford_Fiesta_Zetec_1.4_Front.jpg" alt="">
-    <% elsif booking.car.id == 13%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Audi_A5_II_2016.jpg" alt="">
-    <% elsif booking.car.id == 14%>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Buick_Encore_01_China_2014-04-14.jpg" alt="">
-    <% else %>
-      <img src="https://source.unsplash.com/GDOGHRVhcME" />
-    <% end %>
-    <div class="card-product-infos">
-      <div>
-        <h2><%= link_to booking.car.brand, booking_path(booking) %></h2>
-        <p>Rental Period: <%= booking.rental_days %></p>
-        <p>Start date: <%=  booking.start_date%></p>
-        <p>End date: <%=  booking.end_date%></p>
+  <div class="cards">
+    <% @bookings.each do |booking| %>
+      <div class="car-card">
+        <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="car-card-info-left">
+          <div>
+            <h2><%= booking.car.brand %></h2>
+            <p>Rental Period: <%= booking.rental_days %> days</p>
+            <p>Start date: <%=  booking.start_date%></p>
+            <p>End date: <%=  booking.end_date%></p>
+          </div>
+          <div class="car-card-info-right">
+            <%= link_to "Show booking details", booking_path(booking) %>
+          </div>
         </div>
-      <div class="card-product-button">
-      <%= link_to "Go to my booking", booking_path(booking), class: "submit-search-button"  %>
-      <%= link_to "Cancel", booking_path(booking), class: "submit-search-button"  %>
       </div>
-    </div>
-  </div>
-  <% end %>
-  </div>
+    <% end %>
   </div>
 </div>
+
 
 
 
