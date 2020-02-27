@@ -35,7 +35,6 @@
         <p>🕹<%= @car.drive_train.capitalize %></p>
       </div>
     </div>
-
     <div class="car-status col-md-4">
       <p>€<%= @car.price %> per day</p>
       <% if @car.online %>
@@ -55,7 +54,21 @@
   </div>
   <hr>
   <div class="car-description row">
-    <p class="description-text col-md-7"><%= @car.description %></div>
+    <p class="description-text col-md-7"><%= @car.description %> </p>
   </div>
+      <br>
+      <br>
+      <h3><%= pluralize @car.reviews.size, "review" %></h3>
+      <div id="reviews">
+        <% if @car.reviews.blank? %>
+          Be the first to leave a review for <strong><%= @car.brand %></strong>
+        <% else %>
+          <% @car.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review %>
+          <% end %>
+        <% end %>
+      </div>
+      <%= render 'reviews/form', car: @car, review: @review %>
+      <br>
+      <br>
 </div>
-
