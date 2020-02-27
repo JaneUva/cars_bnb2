@@ -1,24 +1,29 @@
 <div class="container">
 
-  <h1 id="booking-title">Booking for <%= @booking.car.brand %> </h1>
-
-  <div class="booking-info row">
-
-    <div class="booking-details col">
+  <div class="car-info row">
+    <div class="car-details col-md-8 ">
+      <h1 id="booking-title">Booking confirmation: <strong><%= @booking.car.brand%> <%=  @booking.car.kind  %></strong></h1>
+      <p>Congratulations! Your booking is complete. <br> Please check if all information in the box to the right is correct.</p>
       <%= cl_image_tag @booking.car.photo.key, height: 300, width: 500, crop: :fill %>
-      <p>Start Date: <%= @booking.start_date %></p>
-      <p>End Date: <%= @booking.end_date %></p>
     </div>
-
-    <div class="booking-status border border-dark rounded p-3 col-md-3">
-      <p>Rental Period: <%= @booking.rental_days %> days</p>
-      <p>Total Cost:  <%= (@booking.car.price * @booking.rental_days) %>€</p>
-      <%= link_to "Cancel this booking", booking_path, method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
+    <div class="booking-status col-md-4 position-sticky ">
+      <div class="booking-status-title">
+        <h4 class="border-bottom"><strong>Booking details</strong>  </h4>
+      </div>
+      <div class="booking-status-info">
+        <p>Rental period: <%= @booking.rental_days %> days</p>
+        <p>Start date: <%= @booking.start_date %></p>
+        <p>End date: <%= @booking.end_date %></p>
+        <p>Pick up location <%= @booking.car.location %></p>
+      </div>
+      <div class="total-price border-top">
+        <p class="booking-status-price"><strong>Total amount:  <%= (@booking.car.price * @booking.rental_days) %>€</strong></p>
+      </div>
+      <div class="btn-red">
+        <%= link_to "Go to my bookings", bookings_path, class: "submit-search-button"%>
+      </div>
     </div>
-
   </div>
-
-<hr>
-<%= link_to "Back to vehicle", car_path(@booking.car_id) %>
-
 </div>
+
+
