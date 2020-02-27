@@ -5,7 +5,7 @@
   <div class="booking-info row">
 
     <div class="booking-details col">
-      <img class="car-pic" src="https://image.flaticon.com/icons/svg/66/66906.svg">
+      <%= cl_image_tag @booking.car.photo.key, height: 300, width: 500, crop: :fill %>
       <p>Start Date: <%= @booking.start_date %></p>
       <p>End Date: <%= @booking.end_date %></p>
     </div>
