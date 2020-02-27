@@ -2,7 +2,7 @@
   <h1 id="car-show-title"><%= @car.brand %></h1>
   <div class="car-info row">
     <div class="car-details col-md-8">
-      <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @car.photo.key, height: 300, width: 500, crop: :fill %>
         <div id="car-specs">
         <h4><%= @car.kind.capitalize %></h4>
         <p>👤<%= @car.capacity %> passengers</p>
