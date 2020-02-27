@@ -1,24 +1,30 @@
 <div class="container">
   <h1>My Bookings</h1>
 
-  <div class="cards">
-    <% @bookings.each do |booking| %>
-      <div class="car-card">
-        <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="car-card-info-left">
-          <div>
-            <h2><%= booking.car.brand %></h2>
-            <p>Rental Period: <%= booking.rental_days %> days</p>
-            <p>Start date: <%=  booking.start_date%></p>
-            <p>End date: <%=  booking.end_date%></p>
-          </div>
-          <div class="car-card-info-right">
-            <%= link_to "Show booking details", booking_path(booking) %>
+  <%# @bookings = [] %>
+  <% if @bookings.present? %>
+    <div class="cards">
+      <% @bookings.each do |booking| %>
+        <div class="car-card">
+          <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="car-card-info-left">
+            <div>
+              <h2><%= booking.car.brand %></h2>
+              <p>Rental Period: <%= booking.rental_days %> days</p>
+              <p>Start date: <%=  booking.start_date%></p>
+              <p>End date: <%=  booking.end_date%></p>
+            </div>
+            <div class="car-card-info-right">
+              <%= link_to "Show booking details", booking_path(booking) %>
+              <%= link_to "Delete", booking_path(booking), method: :delete,  data: { confirm: "Are you sure?" } %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h1 id="no-results">Sorry, you have no bookings.</h1>
+  <% end %>
 </div>
 
 
