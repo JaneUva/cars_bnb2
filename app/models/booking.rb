@@ -18,5 +18,4 @@ class Booking < ApplicationRecord
   def rental_days
     (self.end_date-self.start_date).to_i
   end
-
 end
