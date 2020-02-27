@@ -10,7 +10,11 @@
   <div class="cards">
     <% @cars.each do |car| %>
     <div class="car-card">
-      <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if car.photo.nil? %>
+        <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Man_Driving_Car_Cartoon_Vecto" alt="">
+      <% end %>
       <div class="car-card-info-left">
         <div>
           <h2><%= car.brand %></h2>
