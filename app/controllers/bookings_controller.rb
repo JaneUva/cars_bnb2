@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     @bookings = policy_scope(Booking)
-
   end
 
   def create
@@ -22,7 +21,6 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
-    @number_of_days = (@booking.end_date - @booking.start_date).to_i
   end
 
   def destroy
@@ -41,6 +39,4 @@ class BookingsController < ApplicationController
   def set_params
     params[:booking].permit(:start_date, :end_date, :car_id, :user_id)
   end
-
-
 end
