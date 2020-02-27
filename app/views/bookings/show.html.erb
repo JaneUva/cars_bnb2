@@ -11,8 +11,8 @@
     </div>
 
     <div class="booking-status border border-dark rounded p-3 col-md-3">
-      <p>Rental Period: <%= @number_of_days %> days</p>
-      <p>Total Cost: <%= (@booking.car.price * @number_of_days) %></p>
+      <p>Rental Period: <%= @booking.rental_days %> days</p>
+      <p>Total Cost:  <%= (@booking.car.price * @booking.rental_days) %>€</p>
       <%= link_to "Cancel this booking", booking_path, method: :delete, data: {confirm: "Are you sure you want to cancel this booking?"} %>
     </div>
 

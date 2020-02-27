@@ -1,9 +1,6 @@
 <div class="container">
   <h1>My Bookings</h1>
 
-<div class="container-two-columns">
-
-<div class="container-booked-cars">
 <% @bookings.each do |booking| %>
   <div class="card-product">
     <% if booking.car.brand.include?("Honda") %>
@@ -35,12 +32,11 @@
     <% end %>
     <div class="card-product-infos">
       <div>
-      <h2><%= link_to booking.car.brand, booking_path(booking) %></h2>
-      <% days = (booking.end_date-booking.start_date).to_i %>
-      <p>Rental Period: <%= "#{days}" %> days</p>
-      <p>Start date: <%=  booking.start_date%></p>
-      <p>End date: <%=  booking.end_date%></p>
-      </div>
+        <h2><%= link_to booking.car.brand, booking_path(booking) %></h2>
+        <p>Rental Period: <%= booking.rental_days %></p>
+        <p>Start date: <%=  booking.start_date%></p>
+        <p>End date: <%=  booking.end_date%></p>
+        </div>
       <div class="card-product-button">
       <%= link_to "Go to my booking", booking_path(booking), class: "submit-search-button"  %>
       <%= link_to "Cancel", booking_path(booking), class: "submit-search-button"  %>
