@@ -1,23 +1,36 @@
 .container h1 {
-margin-bottom: 20px;
+margin-top: 36px;
+margin-left: 80px;
 }
 
-#booking-title {
-  margin-top: 30px;
-}
-
-.booking-status {
-  height: fit-content;
-}
-
-#car-specs {
-  padding: none;
+.car-details p {
+  margin-left: 80px;
 }
 
 #img-booking {
-  width: 50vw;
-  height: auto;
-  padding-bottom: 20px;
-  border-radius: 3px;
+  height: 300px;
+  width: 600px;
+  border-radius: 4px;
+  padding: 16px 0px;
+  margin-left: 80px;
 }
 
+.total-price {
+  margin: 36px 0px;
+
+}
+.booking-status {
+  text-align: center;
+  margin: 36px 0px;
+  border: solid 1px lightgray;
+  background-color: white;
+  box-shadow: 2px 2px 3px lightgray;
+}
+
+.btn-red {
+  margin-top: 36px;
+}
+
+.booking-status-title {
+ margin: 36px 0px;
+}
