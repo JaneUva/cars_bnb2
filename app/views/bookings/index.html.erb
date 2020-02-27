@@ -4,7 +4,6 @@
 <% @bookings.each do |booking| %>
   <div class="card-product">
     <% if booking.car.brand.include?("Honda") %>
-    <% raise %>
       <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/2018_Nissan_Juke_Bose_Personal_Edition_1.6_Front.jpg" alt="">
     <% elsif booking.car.id == 1%>
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/2009_Ford_F-150_XLT_SuperCrew.jpg" alt="">
@@ -34,8 +33,8 @@
     <div class="card-product-infos">
       <div>
         <h2><%= link_to booking.car.brand, booking_path(booking) %></h2>
-        <% days = (booking.end_date-booking.start_date).to_i %>
-        <p>Rental Period: <%= "#{days}" %> days</p>
+
+        <p>Rental Period: <%= booking.rental_days %></p>
         <p>Start date: <%=  booking.start_date%></p>
         <p>End date: <%=  booking.end_date%></p>
         </div>
