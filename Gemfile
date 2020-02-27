@@ -13,6 +13,8 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 #Adding geocoder for map generation
 gem 'geocoder'
+#Adding cloudinary for image upload
+gem 'cloudinary', '~> 1.12.0'
 
 
 gem 'autoprefixer-rails'
