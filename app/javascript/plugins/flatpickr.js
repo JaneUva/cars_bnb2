@@ -1,10 +1,19 @@
 import flatpickr from "flatpickr";
-import 'flatpickr/dist/themes/airbnb.css';
-//import "flatpickr/dist/flatpickr.min.css";
+// import 'flatpickr/dist/themes/airbnb.css';
+import "flatpickr/dist/flatpickr.min.css";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
-flatpickr("#range_date", {
+flatpickr(".range_date", {
   altInput: true
+});
+
+// flatpickr("#booking_start_date", {
+//   altInput: true,
+//   plugins: [new rangePlugin({ input: "#booking_end_date"})]
+// })
+
+flatpickr({
+    "plugins": [new rangePlugin({ input: "#booking_end_date"})]
 });
 
 const startDateInput = document.getElementById('booking_start_date');
