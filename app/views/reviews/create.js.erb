@@ -1,0 +1,18 @@
+var reviewForm = document.getElementById('new_review');
+
+<% if @review.persisted? %>
+
+// Step 1 create the html for the review
+var newReview = "<%= j render 'reviews/show', review: @review %>";
+
+// Step 2 append the new review to the list
+var reviews = document.getElementById('reviews');
+reviews.insertAdjacentHTML('beforeend', newReview);
+
+// Step 3 Empty out the input box
+reviewForm.innerHTML = "<%= j render 'reviews/form', car: @car, review: Review.new %>";
+<% else %>
+// 1. render the form partial with the new @review
+reviewForm.innerHTML = "<%= j render 'reviews/form', car: @car, review: @review %>";
+
+<% end %>

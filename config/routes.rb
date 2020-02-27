@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'cars#index'
   resources :cars, only: [:index, :show] do
     resources :bookings, only: :create
+    resources :reviews, only: :create
   end
   resources :bookings, only: [:show, :destroy, :index]
 end
