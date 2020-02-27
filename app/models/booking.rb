@@ -14,4 +14,8 @@ class Booking < ApplicationRecord
     errors.add(:end_date, "must be after start date") if
     self.end_date < self.start_date
   end
+
+  def rental_days
+    (self.end_date-self.start_date).to_i
+  end
 end
