@@ -20,7 +20,8 @@ price = (30..100)
     brand: Faker::Vehicle.make_and_model,
     drive_train: Faker::Vehicle.transmission,
     price: rand(price), # or price: rand(1..100)
-    location: Faker::Address.street_address
+    location: Faker::Address.street_address,
+    description: Faker::Lorem.paragraph_by_chars(number: 350, supplemental: false)
     )
   car.save
   puts "Car made..."
