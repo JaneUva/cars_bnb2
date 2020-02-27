@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     authorize @booking
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :template => 'cars/show'
     end
@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     authorize @booking
-    redirect_to car_path(@booking.car), notice: 'Booking was successfully canceled'
+    redirect_to bookings_path, notice: 'Booking was successfully canceled'
   end
 
   private
