@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module CarsBnb2
   class Application < Rails::Application
+    # This token allows to block 100 pushes to form from spammers below
+    # So with this token rails will embed security for all your forms on website
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+
     config.generators do |generate|
           generate.assets false
           generate.helper false
