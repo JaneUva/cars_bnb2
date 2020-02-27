@@ -5,55 +5,55 @@
   </div>
 </div>
 <div class="container">
-  <% if @cars.present? %>
-    <div class="cards">
-    <% @cars.each do |car| %>
-      <div class="car-card">
-        <% if car.brand.include?("Nissan") %>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/2018_Nissan_Juke_Bose_Personal_Edition_1.6_Front.jpg" alt="">
-        <% elsif car.brand.include?("Ford")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/2009_Ford_F-150_XLT_SuperCrew.jpg" alt="">
-        <% elsif car.brand.include?("BMW")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/BMW_X1_%28E84%2C_Facelift%29_%E2%80%93_Frontansicht%2C_2._September_2012%2C_D%C3%BCsseldorf.jpg" alt="">
-        <% elsif car.brand.include?("Honda") %>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/2017_Honda_CR-V_front_4.11.18.jpg" alt="">
-        <% elsif car.brand.include?("Lincoln") %>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Lincoln_MKS_--_01-13-2010.jpg" alt="">
-        <% elsif car.brand.include?("Dodge")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Dodge_Durango_5.7_V8_Hemi_RT_%28III%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg" alt="">
-        <% elsif car.brand.include?("Civic")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Honda_Civic_Type_R_Customer_Racing_Study_IMG_0298.jpg" alt="">
-        <% elsif car.brand.include?("Toyota")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Toyota_Camry_SE_P4110367.jpg" alt="">
-        <% elsif car.brand.include?("Ford")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/2003_Ford_Fiesta_Zetec_1.4_Front.jpg" alt="">
-        <% elsif car.brand.include?("Audi")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Audi_A5_II_2016.jpg" alt="">
-        <% elsif car.brand.include?("Buick")%>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Buick_Encore_01_China_2014-04-14.jpg" alt="">
-        <% else %>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/1987_Citroen_2CV_Bamboo_602cc_Front.jpg" />
-        <% end %>
-        <h1><%= car.kind %></h1>
-        <%Car.where(kind: car.kind).each do |kind_car| %>
+<% if @cars.present? %>
+<div class="cards">
+  <% Car.kinds.each do |kind| %>
+        <h1><%= kind %></h1>
+        <% Car.where(kind: kind).each do |car_with_kind| %>
+          <div class="car-card">
+            <% if car_with_kind.brand.include?("Nissan") %>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/2018_Nissan_Juke_Bose_Personal_Edition_1.6_Front.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Ford")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/2009_Ford_F-150_XLT_SuperCrew.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("BMW")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/BMW_X1_%28E84%2C_Facelift%29_%E2%80%93_Frontansicht%2C_2._September_2012%2C_D%C3%BCsseldorf.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Honda") %>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/2017_Honda_CR-V_front_4.11.18.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Lincoln") %>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Lincoln_MKS_--_01-13-2010.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Dodge")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Dodge_Durango_5.7_V8_Hemi_RT_%28III%29_%E2%80%93_Frontansicht%2C_17._September_2012%2C_D%C3%BCsseldorf.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Civic")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Honda_Civic_Type_R_Customer_Racing_Study_IMG_0298.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Toyota")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Toyota_Camry_SE_P4110367.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Ford")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/2003_Ford_Fiesta_Zetec_1.4_Front.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Audi")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Audi_A5_II_2016.jpg" alt="">
+            <% elsif car_with_kind.brand.include?("Buick")%>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Buick_Encore_01_China_2014-04-14.jpg" alt="">
+            <% else %>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/1987_Citroen_2CV_Bamboo_602cc_Front.jpg" />
+            <% end %>
           <div class=" row car-card-info-left">
             <div>
-              <h2><%= kind_car.brand %></h2>
-              <p>👤 <%= kind_car.capacity %></p>
-              <p>🕹 <%= kind_car.drive_train %></p>
+              <h2><%= car_with_kind.brand %></h2>
+              <p>👤 <%= car_with_kind.capacity %></p>
+              <p>🕹 <%= car_with_kind.drive_train %></p>
             </div>
             <div class="car-card-info-right">
-              <h2 class="car-card-pricing">Price: <%= kind_car.price %>€</h2>
-              <%= link_to "More details", car_path(kind_car), class: "submit-search-button" %>
+              <h2 class="car-card-pricing">Price: <%= car_with_kind.price %>€</h2>
+              <%= link_to "More details", car_path(car_with_kind), class: "submit-search-button" %>
             </div>
           </div>
         <% end %>
       </div>
-  <% else %>
-    <h1 id="no-results">Sorry, we didn't find any cars matching your search</h1>
   <% end %>
-
-  </div>
+</div>
+<% else %>
+  <h1 id="no-results">Sorry, we didn't find any cars matching your search</h1>
+<% end %>
   <div
     id="map"
     data-markers="<%= @markers.to_json %>"
