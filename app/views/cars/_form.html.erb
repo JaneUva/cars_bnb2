@@ -1,4 +1,4 @@
-<%= simple_form_for(car) do |f| %>
+<%= simple_form_for(@car) do |f| %>
   <%= f.input :kind %>
   <%= f.input :brand %>
   <%= f.input :capacity %>
@@ -7,4 +7,5 @@
   <%= f.input :location %>
   <%= f.input :description %>
   <%= f.input :photo, as: :file %>
+  <%= f.submit "Host your car", class: "btn btn-primary" %>
 <% end %>
