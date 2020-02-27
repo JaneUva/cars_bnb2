@@ -15,6 +15,12 @@ class Car < ApplicationRecord
     return brands
   end
 
+  def self.kinds
+    @cars = Car.all
+    kinds = @cars.map { |car| car.kind }
+    return kinds
+  end
+
   def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|
       { from: range[0], to: range[1] }
