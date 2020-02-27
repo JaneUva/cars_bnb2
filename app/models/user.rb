@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :cars
   validates :first_name, :last_name, presence: true
-  validates :content, presence: true
 end
