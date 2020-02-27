@@ -7,11 +7,6 @@ flatpickr(".range_date", {
   altInput: true
 });
 
-// flatpickr("#booking_start_date", {
-//   altInput: true,
-//   plugins: [new rangePlugin({ input: "#booking_end_date"})]
-// })
-
 flatpickr({
     "plugins": [new rangePlugin({ input: "#booking_end_date"})]
 });
