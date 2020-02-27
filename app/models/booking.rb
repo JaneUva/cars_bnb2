@@ -14,7 +14,4 @@ class Booking < ApplicationRecord
     errors.add(:end_date, "must be after start date") if
     self.end_date < self.start_date
   end
-  def date_unavailable
-    [self.start_date, self.end_date]
-  end
 end
