@@ -14,8 +14,7 @@
           <div class="cards">
             <% cars.each do |car| %>
               <div class="car-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/2018_Nissan_Juke_Bose_Personal_Edition_1.6_Front.jpg" alt="">
-                <div class="car-card-info-left">
+                <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
                   <div>
                     <h2><%= car.brand %></h2>
                     <p>👤 <%= car.capacity %></p>

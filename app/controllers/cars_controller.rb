@@ -14,8 +14,23 @@ skip_before_action :authenticate_user!, only: [:index, :show]
       lng: car.longitude,
       infoWindow: render_to_string(partial: "info_window", locals: { car: car })
     }
+    end
   end
 
+  def new
+    @car = Car.new
+    authorize @car
+  end
+
+  def create
+    @car = Car.new(set_car_params)
+    @car.user_id = current_user.id
+    authorize @car
+    if @car.save
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
   def show
@@ -27,11 +42,8 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   private
 
-  # def analyze_query
-  #   if Car.brands.include? "#{params[:query]}"
-  #     @cars = Car.where("brand ILIKE?", "%#{params[:query]}%")
-  #   else
-  #     @cars = Car.near(params[:query], 10)
-  #   end
-  # end
+  def set_car_params
+    params[:car].permit(:kind, :brand, :capacity, :price, :drive_train, :location, :description, :photo, :user_id)
+  end
+
 end
