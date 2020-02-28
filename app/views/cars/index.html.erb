@@ -10,7 +10,7 @@
       <% grouped_cars = @cars.group_by{|car| car.kind} %>
       <% grouped_cars.each do |car_kind, cars| %>
         <div class="car-category">
-          <h1><%= car_kind %></h1>
+          <h2><%= car_kind %></h2>
           <div class="cards">
             <% cars.each do |car| %>
               <div class="car-card">
@@ -34,6 +34,7 @@
   <% else %>
     <h1 id="no-results">Sorry, we didn't find any cars matching your search</h1>
   <% end %>
+  <h2>View cars on map</h2>
   <div
     id="map"
     data-markers="<%= @markers.to_json %>"
