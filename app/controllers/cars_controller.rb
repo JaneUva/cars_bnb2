@@ -19,6 +19,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
     @kinds = ["Crew Cab Pickup", "Coupe", "Sedan", "Regular Cab Pickup", "Wagon", "Cargo Van", "SUV", "Minivan", "Hatchback", "Passenger Van", "Extended Cab Pickup", "Convertible"]
+    @drive_train_types = ["Automanual", "Automatic", "CVT", "Manual"]
     @car = Car.new
     authorize @car
   end
