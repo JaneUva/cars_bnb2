@@ -33,7 +33,7 @@
       <p><%= @car.description %> </p>
     </div>
     <div class="review-text col-md-8">
-      <h4 class="border-top"><strong><%= pluralize @car.reviews.size, "review" %></strong></h4>
+      <h4 id="review-count" class="border-top">Number of reviews: <%= @car.reviews.size%></h4>
     <div id="reviews">
       <% if @car.reviews.blank? %>
         <p>Be the first to leave a review for <strong><%= @car.brand %></strong></p>
@@ -43,7 +43,7 @@
         <% end %>
       <% end %>
     </div>
-    <div>
+    <div class="review-button col-md-8">
       <%= render 'reviews/form', car: @car, review: @review%>
     </div>
     </div>

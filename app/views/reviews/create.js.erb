@@ -8,7 +8,7 @@ var newReview = "<%= j render 'reviews/show', review: @review %>";
 // Step 2 append the new review to the list
 var reviews = document.getElementById('reviews');
 reviews.insertAdjacentHTML('beforeend', newReview);
-
+document.getElementById('review-count').innerText = 'Number of reviews: <%= @car.reviews.size%>';
 // Step 3 Empty out the input box
 reviewForm.innerHTML = "<%= j render 'reviews/form', car: @car, review: Review.new %>";
 <% else %>
