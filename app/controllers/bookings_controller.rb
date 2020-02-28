@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     authorize @booking
     if @booking.save
-      redirect_to booking_path(booking)
+      redirect_to booking_path(@booking)
     else
       render :template => 'cars/show'
     end

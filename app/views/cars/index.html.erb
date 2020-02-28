@@ -15,13 +15,13 @@
             <% cars.each do |car| %>
               <div class="car-card">
                 <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-                <div class="car-card-info-left">
-                  <div>
+                <div class="car-card-info">
+                  <div class="left-side">
                     <h2><%= car.brand %></h2>
                     <p>👤 <%= car.capacity %></p>
                     <p>🕹 <%= car.drive_train %></p>
                   </div>
-                  <div class="car-card-info-right">
+                  <div class="right-side">
                     <h2 class="car-card-pricing">Price/day: <%= car.price %>€</h2>
                     <%= link_to "More details", car_path(car), class: "submit-search-button" %>
                   </div>

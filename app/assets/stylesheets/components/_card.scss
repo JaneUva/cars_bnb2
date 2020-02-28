@@ -2,6 +2,8 @@
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .car-category h1 {
@@ -37,19 +39,32 @@
   margin: 0;
 }
 
-.car-card .car-card-info-left {
+
+.car-card .car-card-info {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   position: relative;
 }
 
-.car-card .car-card-info-right {
+.car-card-info .right-side {
   text-align: end;
 }
 
+.car-card-info .right-side-for-bookings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
 
+.right-side-for-bookings a {
+  color: inherit;
+}
 
+.right-side-for-bookings .cancel-btn {
+  color: $ferrari_red;
+}
 
  // Media queries
 
