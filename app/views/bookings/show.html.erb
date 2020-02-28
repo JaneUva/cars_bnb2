@@ -3,7 +3,7 @@
     <div class="car-details col-md-8 ">
       <h1 id="booking-title">Booking confirmation: <strong><%= @booking.car.brand%> <%=  @booking.car.kind  %></strong></h1>
       <p>Congratulations! Your booking is complete. <br> Please check if all information in the box to the right is correct.</p>
-      <%= cl_image_tag @booking.car.photo.key, height: 300, width: 500, crop: :fill, id: "img-booking"%>
+      <%= cl_image_tag @booking.car.photo.key, height: 300, width: 500, id: "img-booking"%>
     </div>
     <div class="booking-status col-md-4 position-sticky ">
       <div class="booking-status-title">
