@@ -10,7 +10,9 @@
   grid-column: 1 / 3;
   margin-left: 80px;
   margin-top: 16px;
+  margin-bottom: 20px;
   background: white;
+  padding: 15px;
 }
 
 #img-car {
@@ -30,10 +32,6 @@
 .red {
   color: red;
   font-size: 22px;
-}
-
-.review-button {
-  margin-bottom: 60px;
 }
 
 .booking-status-box-title h4 {
@@ -69,4 +67,11 @@
 
 #reviews {
   margin-bottom: 36px;
+}
+
+#reviews p {
+  background-color: $light_gray;
+  border-radius: 5px;
+  padding: 14px;
+  margin: 10px 0;
 }

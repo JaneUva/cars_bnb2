@@ -1,1 +1,1 @@
-<p><strong><%= review.user.first_name %></strong> | <%= review.content %></p>
+<p><%= cl_image_tag review.user.photo.key, class: "avatar" %> <%= review.content %></p>
