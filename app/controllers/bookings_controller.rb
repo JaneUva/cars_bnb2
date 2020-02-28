@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_car, except: [:destroy, :show, :index]
 
   def index
-    @bookings = Booking.all
     @bookings = policy_scope(Booking)
+    @bookings = current_user.bookings
   end
 
   def create
