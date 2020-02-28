@@ -10,18 +10,18 @@
       <% grouped_cars = @cars.group_by{|car| car.kind} %>
       <% grouped_cars.each do |car_kind, cars| %>
         <div class="car-category">
-          <h1><%= car_kind %></h1>
+          <h2><%= car_kind %></h2>
           <div class="cards">
             <% cars.each do |car| %>
               <div class="car-card">
                 <%= cl_image_tag car.photo.key, height: 300, width: 400 %>
-                <div class="car-card-info-left">
-                  <div>
+                <div class="car-card-info">
+                  <div class="left-side">
                     <h2><%= car.brand %></h2>
                     <p>👤 <%= car.capacity %></p>
                     <p>🕹 <%= car.drive_train %></p>
                   </div>
-                  <div class="car-card-info-right">
+                  <div class="right-side">
                     <h2 class="car-card-pricing">Price/day: <%= car.price %>€</h2>
                     <%= link_to "More details", car_path(car), class: "submit-search-button" %>
                   </div>
@@ -34,6 +34,7 @@
   <% else %>
     <h1 id="no-results">Sorry, we didn't find any cars matching your search</h1>
   <% end %>
+  <h2>View cars on map</h2>
   <div
     id="map"
     data-markers="<%= @markers.to_json %>"
