@@ -6,13 +6,13 @@
     <div class="cards">
       <% @bookings.each do |booking| %>
         <div class="car-card">
-          <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag booking.car.photo.key, height: 300, width: 400%>
           <div class="car-card-info">
             <div class="left-side">
               <h2><%= booking.car.brand %></h2>
               <p>Rental Period: <%= booking.rental_days %> days</p>
-              <p>Start date: <%= booking.start_date%></p>
-              <p>End date: <%=  booking.end_date%></p>
+              <p>Start date: <%=  booking.start_date.to_time.strftime('%e/%m/%y')%></p>
+              <p>End date: <%=  booking.end_date.to_time.strftime('%e/%m/%y')%></p>
             </div>
             <div class="right-side-for-bookings">
                <u><%= link_to "Show booking details", booking_path(booking) %> </u>

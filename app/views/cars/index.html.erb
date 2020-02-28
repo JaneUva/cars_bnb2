@@ -7,14 +7,14 @@
 
 <div class="container">
   <% if @cars.present? %>
-      <% grouped_cars = Car.all.group_by{|car| car.kind} %>
+      <% grouped_cars = @cars.group_by{|car| car.kind} %>
       <% grouped_cars.each do |car_kind, cars| %>
         <div class="car-category">
           <h1><%= car_kind %></h1>
           <div class="cards">
             <% cars.each do |car| %>
               <div class="car-card">
-                <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag car.photo.key, height: 300, width: 400 %>
                 <div class="car-card-info">
                   <div class="left-side">
                     <h2><%= car.brand %></h2>

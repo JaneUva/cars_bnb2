@@ -1,4 +1,4 @@
 <%= simple_form_for([ car, review ], remote: true) do |form| %>
-  <%= form.input :content, as: :text %>
-  <%= form.button :submit %>
+  <%= form.input :content, as: :text, class: "review-text-input" %>
+  <%= form.button :submit, class: "booking-book-button" %>
 <% end %>
