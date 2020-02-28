@@ -7,7 +7,7 @@
 
 <div class="container">
   <% if @cars.present? %>
-      <% grouped_cars = Car.all.group_by{|car| car.kind} %>
+      <% grouped_cars = @cars.group_by{|car| car.kind} %>
       <% grouped_cars.each do |car_kind, cars| %>
         <div class="car-category">
           <h1><%= car_kind %></h1>
