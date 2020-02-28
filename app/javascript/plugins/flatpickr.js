@@ -21,7 +21,9 @@ endDateInput.disabled = true
 flatpickr(startDateInput, {
   minDate: "today",
   disable: unavailableDates,
-  dateFormat: "Y-m-d",
+  altInput: true,
+  altFormat: "F j, Y",
+  dateFormat: "d-m-y",
 });
 
 console.log('im in the file')
@@ -33,7 +35,9 @@ startDateInput.addEventListener("change", (e) => {
   flatpickr(endDateInput, {
     minDate: e.target.value,
     disable: unavailableDates,
-    dateFormat: "Y-m-d"
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "d-m-y"
     });
   })
 };
