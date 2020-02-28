@@ -40,10 +40,10 @@
       <p><%= @car.description %> </p>
     </div>
     <div class="review-text">
-      <h4 id="review-count">Number of reviews: <%= @car.reviews.size%></h4>
+      <h4 id="review-count">Reviews: <%= @car.reviews.size%></h4>
     <div id="reviews">
       <% if @car.reviews.blank? %>
-        <p>Be the first to leave a review for <strong><%= @car.brand %></strong></p>
+        <span id="hide-help">Be the first to leave a review for <strong><%= @car.brand %></strong></span>
       <% else %>
         <% @car.reviews.each do |review| %>
           <%= render 'reviews/show', review: review %>
