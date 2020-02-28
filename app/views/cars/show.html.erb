@@ -2,7 +2,7 @@
   <div class="car-info row">
     <div class="car-details col-md-8 ">
       <h1 id="booking-title"><strong><%= @car.brand%> <%=  @car.kind  %></strong></h1>
-        <%= cl_image_tag @car.photo.key, height: 300, width: 500, crop: :fill, id: "img-car" %>
+        <%= cl_image_tag @car.photo.key, height: 300, width: 500, id: "img-car" %>
     </div>
     <div class="booking-status col-md-4 position-sticky ">
       <div class="booking-status-title">

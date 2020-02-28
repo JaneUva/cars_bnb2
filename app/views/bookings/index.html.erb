@@ -6,7 +6,7 @@
     <div class="cards">
       <% @bookings.each do |booking| %>
         <div class="car-card">
-          <%= cl_image_tag booking.car.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag booking.car.photo.key, height: 300, width: 400%>
           <div class="car-card-info-left">
             <div>
               <h2><%= booking.car.brand %></h2>

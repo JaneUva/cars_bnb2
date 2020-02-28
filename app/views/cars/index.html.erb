@@ -14,7 +14,7 @@
           <div class="cards">
             <% cars.each do |car| %>
               <div class="car-card">
-                <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag car.photo.key, height: 300, width: 400 %>
                 <div class="car-card-info-left">
                   <div>
                     <h2><%= car.brand %></h2>
