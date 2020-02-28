@@ -1,5 +1,5 @@
 <%= simple_form_for(@car) do |f| %>
-  <%= f.input :kind %>
+  <%= f.input :kind, collection: @kinds %>
   <%= f.input :brand %>
   <%= f.input :capacity %>
   <%= f.input :price %>
