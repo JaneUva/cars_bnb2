@@ -17,8 +17,8 @@ margin-left: 80px;
 
 .total-price {
   margin: 36px 0px;
-
 }
+
 .booking-status {
   text-align: center;
   margin: 36px 0px;
@@ -27,10 +27,18 @@ margin-left: 80px;
   box-shadow: 2px 2px 2px lightgray;
 }
 
+.review-text-input {
+  padding-left: 12px;
+}
+
 .btn-red {
   margin-top: 36px;
 }
 
 .booking-status-title {
  margin: 36px 0px;
+}
+
+#review_content {
+  padding:none;
 }

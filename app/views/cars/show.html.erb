@@ -1,12 +1,13 @@
 <div class="container">
-  <div class="car-info row">
-    <div class="car-details col-md-8 ">
+  <div class="wrapper">
+    <div class="car-details">
       <h1 id="booking-title"><strong><%= @car.brand%> <%=  @car.kind  %></strong></h1>
         <%= cl_image_tag @car.photo.key, height: 300, width: 500, crop: :fill, id: "img-car" %>
     </div>
-    <div class="booking-status col-md-4 position-sticky ">
-      <div class="booking-status-title">
-        <h4 class="border-bottom"><strong>Details</strong>  </h4>
+    <div class="booking-status-box">
+      <div class="booking-status-box-title">
+        <h4 ><strong>Details</strong>  </h4>
+        <p class="border-bottom"></p>
       </div>
       <div class="booking-status-info">
         <p>Price €<%= @car.price %> per day</p></p>
@@ -28,12 +29,12 @@
       </div>
     </div>
 
-    <div class="description-text col-md-8">
-      <h4><strong>Car details</strong></h4>
+    <div class="description-text">
+      <h4><strong>Description</strong></h4>
       <p><%= @car.description %> </p>
     </div>
-    <div class="review-text col-md-8">
-      <h4 id="review-count" class="border-top">Number of reviews: <%= @car.reviews.size%></h4>
+    <div class="review-text">
+      <h4 id="review-count">Number of reviews: <%= @car.reviews.size%></h4>
     <div id="reviews">
       <% if @car.reviews.blank? %>
         <p>Be the first to leave a review for <strong><%= @car.brand %></strong></p>
