@@ -1,1 +1,7 @@
-<p><strong><%= review.user.first_name %></strong> | <%= review.content %> | <%= '⭐' * review.rating %></p>
+<div class="card-review">
+  <%= cl_image_tag review.user.photo.key, class: 'avatar review-avatar' %>
+  <div>
+    <p class="card-review-content"> <%= review.content %> </p>
+    <p class="review-star"> <%= '⭐' * review.rating %> </p>
+  </div>
+</div>
