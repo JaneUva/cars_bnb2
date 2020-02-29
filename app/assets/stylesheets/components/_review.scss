@@ -1,1 +1,29 @@
-_review.scss
+.card-review{
+  margin-bottom: 25px;
+  padding: 16px;
+  display: flex;
+  // justify-content: space-between;
+  position: relative;
+  background-color: $light_gray;
+}
+
+.card-review-avatar {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.card-review-star {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.card-review-content {
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  padding-top: 5px;
+  border-radius: 5px;
+  padding: 14px;
+  margin: 10px 0;
+}

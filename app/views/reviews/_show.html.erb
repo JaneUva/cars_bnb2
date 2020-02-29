@@ -1,7 +1,5 @@
 <div class="card-review">
-  <%= cl_image_tag review.user.photo.key, class: 'avatar review-avatar' %>
-  <div>
-    <p class="card-review-content"> <%= review.content %> </p>
-    <p class="review-star"> <%= '⭐' * review.rating %> </p>
-  </div>
+  <%= cl_image_tag review.user.photo.key, class: 'avatar card-review-avatar' %>
+  <p class="card-review-star"> <%= '⭐' * review.rating %> </p>
+    <p><%= review.content %></p>
 </div>
