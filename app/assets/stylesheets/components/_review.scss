@@ -1,6 +1,7 @@
 .card-review{
-  margin-bottom: 25px;
-  padding: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -13,6 +14,12 @@
   left: -10px;
 }
 
+.card-review-time {
+  position: absolute;
+  left: 35px;
+  font-size: 10px;
+}
+
 .card-review-star {
   position: absolute;
   top: 5px;
@@ -20,9 +27,6 @@
 }
 
 .card-review-content {
-  flex-grow: 1;
-  padding-top: 5px;
-  border-radius: 5px;
   padding: 14px;
   margin: 10px 0;
   word-break: break-all;
