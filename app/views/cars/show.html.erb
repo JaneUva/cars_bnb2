@@ -18,19 +18,19 @@
           <i class="fas fa-car red"> - unavailable</i>
         <% end %>
       </div>
+      <% if user_signed_in? %>
+        <% if current_user.id != @car.user_id %>
+        <div class="button-collapse">
+           <a class="booking-book-button " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+           Book this car </a>
 
-      <% if current_user.id != @car.user_id  %>
-      <div class="button-collapse">
-         <a class="booking-book-button " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-         Book this car </a>
-
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          <%= render "bookings/form" %>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <%= render "bookings/form" %>
+          </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
-
 
       </div>
     </div>

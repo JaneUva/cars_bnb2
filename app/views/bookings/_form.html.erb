@@ -1,12 +1,8 @@
 <div id='car-booking-dates' data-unavailable="<%= @car.unavailable_dates.to_json %>">
-    <% if user_signed_in? %>
-
-         <%= simple_form_for([@car, @booking]) do |f| %>
-             <%= f.input :start_date, as: :string, placeholder: "Please enter a start date", input_html: { class: "range_date", id: "booking_start_date"} %>
-             <%= f.input :end_date, as: :string, placeholder: "Please enter an end date", input_html: { class: "range_date", id: "booking_end_date"} %>
-             <%= f.submit "Confirm", class: "btn btn-primary" %>
-             <%= f.error_notification %>
-          <% end %>
-
+   <%= simple_form_for([@car, @booking]) do |f| %>
+       <%= f.input :start_date, as: :string, placeholder: "Please enter a start date", input_html: { class: "range_date", id: "booking_start_date"} %>
+       <%= f.input :end_date, as: :string, placeholder: "Please enter an end date", input_html: { class: "range_date", id: "booking_end_date"} %>
+       <%= f.submit "Confirm", class: "btn btn-primary" %>
+       <%= f.error_notification %>
     <% end %>
  </div>
