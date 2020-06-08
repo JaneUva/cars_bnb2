@@ -8,13 +8,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(set_params)
+    @review = Review.new
     @booking.car = @car
-    @booking.user_id = current_user.id
+    @booking.user = current_user
     authorize @booking
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :template => 'cars/show'
+      render 'cars/show'
     end
   end
 
@@ -37,6 +38,6 @@ class BookingsController < ApplicationController
   end
 
   def set_params
-    params[:booking].permit(:start_date, :end_date, :car_id, :user_id)
+    params[:booking].permit(:start_date, :end_date)
   end
 end
